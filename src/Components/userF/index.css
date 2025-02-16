@@ -1,0 +1,108 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+  }
+  
+  /* Background Image Styling */
+  .background-img {
+    background-image: url('https://th.bing.com/th/id/R.0881314c5451d2b1ff1b99f548d903b3?rik=uFIfX61GmIoToQ&riu=http%3a%2f%2fwww.publicdomainpictures.net%2fpictures%2f50000%2fvelka%2fagriculture-13730152618Ej.jpg&ehk=7LB3PYqHK1lMjqQn%2fx39f0qs%2bnBNaRIKHt%2f%2f6NrmWWA%3d&risl=&pid=ImgRaw&r=0'); /* Replace with your image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 50px 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Form Container Styling */
+  .form-container {
+    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Form Labels */
+  label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  /* Input Fields Styling */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  select {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Focus and Hover Effects for Inputs */
+  input:focus, select:focus {
+    border-color: #008C00; /* Green */
+    box-shadow: 0 0 8px rgba(0, 140, 0, 0.4);
+  }
+  
+  input:hover, select:hover {
+    border-color: #45a049; /* Lighter Green */
+  }
+  
+  /* Button Styling */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Slightly darker green */
+  }
+  
+  /* Form Field Spacing */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  select {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .form-container {
+      padding: 30px;
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .form-container {
+      padding: 20px;
+      width: 100%;
+    }
+  }
+  

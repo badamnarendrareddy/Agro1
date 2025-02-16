@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter,Route, Switch } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import LoginForm from "./Components/Login";
+import Home from "./Components/Home";
+import WeatherForecast from "./Components/government schemes";
+import Crops from "./Components/cropsprizes";
+import SignUp from "./Components/singUp";
+import FarmingTechniques from "./Components/FerilitzersItems";
+import Form from "./Components/userF";
+import Machinery from "./Components/farmMachinery";
+import Order from "./Components/Order";
+import './App.css'
+const App=()=>(
+ 
+    <BrowserRouter>
+    
+    
+      <Switch>
+        <Route exact path="/Login" component={LoginForm} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/Weather" component={WeatherForecast} />
+        <Route exact path="/CropPrizes" component={Crops} />
+        <Route exact path="/FarmingTechniques" component={FarmingTechniques} />
+        
+        <Route exact path="/Machinery" component={Machinery} />
+        <Route exact path="/Orders" component={Order} />
+        <Route exact path="/Orders" component={SignUp} />
+   
 
-export default App;
+      
+        <Route exact path="/UserNeeds" component={Form} />
+      
+    
+
+      </Switch>
+     
+  
+    </BrowserRouter>
+
+)
+export default App

@@ -1,0 +1,115 @@
+/* Container styling */
+.container3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f7f9fc;
+  }
+  
+  /* Card styling */
+  .card {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 280px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styling for the link */
+  .a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Title styling */
+  .card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* Paragraph styling */
+  .card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+  }
+  
+  /* Image styling */
+  .imag {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover .imag {
+    transform: scale(1.05);
+  }
+  
+  /* Specific styles for each card */
+  #crop-rotation {
+    background: #e8f5e9;
+  }
+  
+  #agroforestry {
+    background: #e3f2fd;
+  }
+  
+  #drip-irrigation {
+    background: #fff3e0;
+  }
+  
+  #integrated-pest-management {
+    background: #ede7f6;
+  }
+  
+  #no-till-farming {
+    background: #e0f2f1;
+  }
+  
+  #organic-farming {
+    background: #fce4ec;
+  }
+  
+  #hydroponics {
+    background: #f3e5f5;
+  }
+  
+  #cover-cropping {
+    background: #f9fbe7;
+  }
+  
+  #precision-agriculture {
+    background: #fff8e1;
+  }
+  
+  #composting {
+    background: #e0e0e0;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .container3 {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .card {
+      width: 90%;
+    }
+  }
+  

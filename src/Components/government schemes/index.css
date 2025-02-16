@@ -1,0 +1,100 @@
+/* General container styling */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #eef2f3, #8e9eab);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Heading styling */
+  .h {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  
+  /* Background for each scheme card */
+  .bg {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: #34495e;
+    border-left: 4px solid #3498db;
+  }
+  
+  .bg:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.15);
+    background: #f0faff;
+  }
+  
+  /* Link styling */
+  .a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: color 0.3s ease;
+  }
+  
+  .a:hover .h,
+  .a:hover p {
+    color: #1abc9c;
+  }
+  
+  /* Scheme title styling */
+  .h {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+  }
+  
+  /* Description text styling */
+  p {
+    font-size: 1rem;
+    color: #5d6d7e;
+    line-height: 1.7;
+    transition: color 0.3s ease;
+    margin-top: 8px;
+  }
+  
+  .bg:hover p {
+    color: #007bff;
+  }
+  
+  /* Add subtle underline effect on hover */
+  .bg:hover .h {
+    color: #007bff;
+    text-decoration: underline;
+  }
+  
+  /* Responsive styling for mobile screens */
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    .h {
+      font-size: 2rem;
+    }
+  
+    .bg {
+      padding: 20px;
+    }
+  }
+  

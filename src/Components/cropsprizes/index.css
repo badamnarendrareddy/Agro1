@@ -1,0 +1,122 @@
+/* General Container Styling */
+.tabs-container {
+    width: 90%;
+    margin: auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #ffffff, #f0f4f7);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  /* Form Styling */
+  .form1 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 25px;
+  }
+  
+  .label1 {
+    font-weight: bold;
+    color: #444;
+    font-size: 1rem;
+    margin-right: 8px;
+  }
+  
+  /* Dropdown Styling */
+  .section {
+    padding: 10px 15px;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 1rem;
+    width: 180px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
+  }
+  
+  .section:focus,
+  .section:hover {
+    border-color: #007bff;
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    outline: none;
+  }
+  
+  /* Enhanced Button Styling */
+  .fancy-button {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+  }
+  
+  .fancy-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 91, 179, 0.4);
+  }
+  
+  /* Crop Item List Styling */
+  .project-list-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+    list-style: none;
+    padding: 0;
+  }
+  
+  /* Crop Card Styling */
+  .project-item {
+    background: linear-gradient(135deg, #ffffff, #f9fbfc);
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .project-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-item img:hover {
+    transform: scale(1.05);
+  }
+  
+  .project-item h3 {
+    font-size: 1.2rem;
+    margin: 15px 0;
+    color: #333;
+  }
+  
+  .project-item p {
+    color: #666;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  /* Text and Price Styling */
+  .project-item .price {
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  

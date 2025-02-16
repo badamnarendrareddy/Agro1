@@ -1,0 +1,66 @@
+/* Project Item Container Styling */
+.project-item-container {
+    background: linear-gradient(135deg, #ffffff, #f3f7fa);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    padding: 15px;
+    margin: auto;
+    cursor: pointer;
+  }
+  
+  /* Hover effect for the entire container */
+  .project-item-container:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Image Styling with Hover Effect */
+  .project-item-image {
+    width: 100%;
+    max-width: 250px;
+    height: 80px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .project-item-container:hover .project-item-image {
+    transform: scale(1.05);
+  }
+  
+  /* Crop Name and Rate Styling */
+  .project-item {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 8px 0;
+  }
+  
+  .project-item:nth-child(2) {
+    color: #007bff;
+  }
+  
+  .project-item:nth-child(3) {
+    color: #ff5733;
+    font-weight: 600;
+  }
+  
+  /* Price Styling */
+  .project-item-container .project-item.rate {
+    color: #007bff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-top: 5px;
+  }
+  
+  /* Smooth transition and subtle scale effect */
+  .project-item-container:hover .project-item {
+    transform: translateY(-5px);
+  }
+  
+  

@@ -1,0 +1,194 @@
+/* index.css */
+
+/* Global styles */
+body {
+    font-family: 'Poppins', sans-serif; /* New font style */
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5; /* Soft background color */
+    color: #333333;
+  }
+  
+  /* Home Container with vibrant background */
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("https://non-gmoreport.com/wp-content/uploads/2018/10/Nepalese-farmers-in-rice-field-1200x801.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 40px;
+    margin-top: 50px;
+    overflow: hidden;
+    filter: brightness(80%);
+  }
+  
+  /* Content Section */
+  .home-content {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent white background */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 25px;
+    width: 80%;
+    max-width: 1100px;
+    opacity: 0;
+    animation: fadeIn 1s forwards, slideUp 1s ease-in-out;
+    z-index: 1;
+  }
+  
+  /* Heading with Typing Effect */
+  .home-heading {
+    font-size: 55px;
+    color: #FF6F61; /* Vibrant Coral Color */
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif; /* Modern font for heading */
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid #FF6F61;
+    animation: typing 3s steps(40) forwards, blink-caret 0.75s step-end infinite;
+  }
+  
+  /* Description */
+  .home-description {
+    font-size: 18px;
+    color: #666666; /* Slightly lighter color for text */
+    line-height: 1.8;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+    opacity: 0;
+    animation: fadeIn 2s 1s forwards;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 500;
+  }
+  
+  /* Typing and Caret Blink Effect */
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blink-caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Button with Hover Effect */
+  .cta-button {
+    padding: 18px 35px;
+    background-color: #FF6F61; /* Matching color to the heading */
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 2s 1.5s forwards;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+  }
+  
+  .cta-button:hover {
+    background-color: #FF5A47; /* Darker shade on hover */
+    transform: translateY(-5px);
+  }
+  
+  /* Images Section */
+  .home-images {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeIn 2s 2s forwards;
+  }
+  
+  .home-mobile-img, .home-desktop-img {
+    border-radius: 15px;
+    max-width: 100%;
+    opacity: 0;
+    animation: fadeIn 2s 2s forwards;
+  }
+  
+  /* Desktop and Mobile Image Display */
+  @media (max-width: 768px) {
+    .home-content {
+      width: 90%;
+    }
+  
+    .home-heading {
+      font-size: 45px;
+    }
+  
+    .home-description {
+      font-size: 16px;
+    }
+  
+    .cta-button {
+      font-size: 18px;
+    }
+  
+    .home-desktop-img {
+      display: none;
+    }
+  
+    .home-mobile-img {
+      display: block;
+      width: 100%;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .home-mobile-img {
+      display: none;
+    }
+  
+    .home-desktop-img {
+      display: block;
+      width: 100%;
+    }
+  }
+  
+  /* Slide Up Animation for Content */
+  @keyframes slideUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Adding smooth scrolling effect for images */
+  .home-images img {
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .home-images img:hover {
+    transform: scale(1.05);
+  }
+  

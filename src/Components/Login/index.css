@@ -1,0 +1,143 @@
+/* index.css */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f7f9fc;
+    color: #333;
+  }
+  
+  .login-form-container1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(135deg, #e0f7fa, #fff);
+  }
+  
+  .form-container1 {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-header1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .login-image1 {
+    width: 60px;
+    margin-bottom: 10px;
+  }
+  
+  .login-title1 {
+    font-size: 1.8rem;
+    color: #00796b;
+    margin: 0;
+  }
+  
+  .input-container1 {
+    margin-bottom: 20px;
+  }
+  
+  .input-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+  
+  .input-wrapper1 {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cfd8dc;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #f7f9fc;
+  }
+  
+  .email-input-field1,
+  .password-input-field1 {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+  
+  .input-icon1 {
+    padding: 10px;
+    font-size: 1.2rem;
+    color: #607d8b;
+    background: #e0f7fa;
+  }
+  
+  .password-input-wrapper1 {
+    display: flex;
+    align-items: center;
+    border: 1px solid #cfd8dc;
+    border-radius: 5px;
+    background: #f7f9fc;
+    overflow: hidden;
+  }
+  
+  .password-toggle-btn1 {
+    border: none;
+    background: transparent;
+    color: #607d8b;
+    font-size: 1rem;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .password-toggle-btn:focus1 {
+    outline: none;
+  }
+  
+  .login-button1{
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background: #00796b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .login-button:hover1 {
+    background: #004d40;
+  }
+  
+  .error-message1 {
+    color: #d32f2f;
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  
+  .success-message1 {
+    color: #388e3c;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .toggle-register1 {
+    color: #00796b;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .toggle-register1:hover {
+    text-decoration: none;
+  }
+  

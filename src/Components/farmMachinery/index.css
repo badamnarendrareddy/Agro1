@@ -1,0 +1,210 @@
+
+/* Overall Page Styling */
+.app {
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* Heading Styling */
+  h1 {
+    text-align: center;
+    color: #4CAF50;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    animation: fadeIn 1.5s ease-out;
+  }
+  
+  /* Animation for Header */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Product Grid Layout */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  /* Product Card Styles */
+  .product-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    background: #fff;
+    cursor: pointer;
+  }
+  
+  /* Hover Effect for Product Cards */
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Discount Badge */
+  .discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #FF5733;
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+    z-index: 10;
+  }
+  
+  /* Product Image Styling */
+  .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Hover Effect for Product Images */
+  .product-card:hover .product-image {
+    transform: scale(1.05);
+  }
+  
+  /* Product Info Section */
+  .product-info {
+    margin-top: 15px;
+  }
+  
+  /* Title Styling */
+  .product-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  /* Hover Effect for Product Title */
+  .product-title:hover {
+    color: #4CAF50;
+  }
+  
+  /* Brand Info */
+  .product-brand {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  /* Product Pricing Section */
+  .product-pricing {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+  
+  /* Price Styling */
+  .product-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Original Price Styling */
+  .product-original-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+  }
+  
+  /* Saved Price Styling */
+  .saved-price {
+    font-size: 16px;
+    color: green;
+    font-weight: bold;
+  }
+  
+  /* Size Select Dropdown */
+  .size-select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 15px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .size-select:focus {
+    border-color: #4CAF50;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .product-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .product-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .payment-buttons button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: #4caf50;
+    color: white;
+  }
+  
+  .payment-buttons button:nth-child(2) {
+    background: #f44336;
+  }
+  
