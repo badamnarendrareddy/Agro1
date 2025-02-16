@@ -1,4 +1,4 @@
-import { BrowserRouter,Route, Switch } from "react-router-dom";
+import { HashRouter,Route, Switch } from "react-router-dom";
 
 import LoginForm from "./Components/Login";
 import Home from "./Components/Home";
@@ -10,9 +10,10 @@ import Form from "./Components/userF";
 import Machinery from "./Components/farmMachinery";
 import Order from "./Components/Order";
 import './App.css'
+
 const App=()=>(
  
-    <BrowserRouter>
+    <HashRouter>
     
     
       <Switch>
@@ -35,7 +36,7 @@ const App=()=>(
       </Switch>
      
   
-    </BrowserRouter>
+    </HashRouter>
 
 )
 export default App
