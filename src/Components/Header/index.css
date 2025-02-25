@@ -128,4 +128,18 @@
       margin-top: 15px;
     }
   }
+  .language-changer {
+    display: flex;
+    gap: 10px;
+  }
   
+  .language-changer button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .language-changer img {
+    width: 20px;
+    height: auto;
+  }

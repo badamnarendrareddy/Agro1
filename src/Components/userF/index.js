@@ -1,10 +1,11 @@
-
-import './index.css'
-import axios from 'axios'
-import React, { useState } from 'react'; 
-import emailjs from 'emailjs-com'; // Import EmailJS library
+import './index.css';
+import axios from 'axios';
+import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
+import { useTranslation } from 'react-i18next';
 
 const Form = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     username: '',
     typeOfUser: '',
@@ -61,35 +62,35 @@ const Form = () => {
   return (
     <div className='background-img'>
       <form onSubmit={handleSubmit} className="form-container">
-        <label>Username</label>
-        <input type="text" name="username" placeholder="Enter User Name" value={formData.username} onChange={handleChange} required />
+        <label>{t('username')}</label>
+        <input type="text" name="username" placeholder={t('enter_username')} value={formData.username} onChange={handleChange} required />
         
-        <label>Type of User</label>
+        <label>{t('type_of_user')}</label>
         <select name="typeOfUser" value={formData.typeOfUser} onChange={handleChange} required>
-          <option value="">Select</option>
-          <option value="Customer">Customer</option>
-          <option value="Farmer">Farmer</option>
+          <option value="">{t('select')}</option>
+          <option value="Customer">{t('customer')}</option>
+          <option value="Farmer">{t('farmer')}</option>
         </select>
         
-        <label>Email</label>
-        <input type="email" name="email" placeholder="Enter Email" value={formData.email} onChange={handleChange} required />
+        <label>{t('email')}</label>
+        <input type="email" name="email" placeholder={t('enter_email')} value={formData.email} onChange={handleChange} required />
         
-        <label>Phone Number</label>
-        <input type="tel" name="phoneNumber" placeholder="Enter Phone Number" value={formData.phoneNumber} onChange={handleChange} required />
+        <label>{t('phone_number')}</label>
+        <input type="tel" name="phoneNumber" placeholder={t('enter_phone_number')} value={formData.phoneNumber} onChange={handleChange} required />
         
-        <label>Alternate Number</label>
-        <input type="tel" name="alternateNumber" placeholder="Enter Alternate Number" value={formData.alternateNumber} onChange={handleChange} />
+        <label>{t('alternate_number')}</label>
+        <input type="tel" name="alternateNumber" placeholder={t('enter_alternate_number')} value={formData.alternateNumber} onChange={handleChange} />
         
-        <label>Address</label>
-        <input type="text" name="address" placeholder="Enter Address" value={formData.address} onChange={handleChange} required />
+        <label>{t('address')}</label>
+        <input type="text" name="address" placeholder={t('enter_address')} value={formData.address} onChange={handleChange} required />
         
-        <label>Product/Crop Need</label>
-        <input type="text" name="productNeed" placeholder="Product/Crop Need" value={formData.productNeed} onChange={handleChange} required />
+        <label>{t('product_need')}</label>
+        <input type="text" name="productNeed" placeholder={t('enter_product_need')} value={formData.productNeed} onChange={handleChange} required />
         
-        <label>Amount of Crop Needed (in kgs)</label>
-        <input type="number" name="cropAmount" placeholder="Amount of Crop Needed" value={formData.cropAmount} onChange={handleChange} required />
+        <label>{t('crop_amount')}</label>
+        <input type="number" name="cropAmount" placeholder={t('enter_crop_amount')} value={formData.cropAmount} onChange={handleChange} required />
         
-        <button type="submit">Submit</button>
+        <button type="submit">{t('submit')}</button>
       </form>
     </div>
   );
