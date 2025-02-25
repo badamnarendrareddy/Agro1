@@ -1,17 +1,78 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './index.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./index.css";
+
+const translations = {
+  en: {
+    farmer: "Farmer",
+    customer: "Customer",
+    name: "Name",
+    productNeed: "Product Need",
+    cropAmount: "Crop Amount",
+    email: "Email",
+    phone: "Phone",
+    alternatePhone: "Alternate Phone",
+    address: "Address",
+    location: "Location",
+    viewOnMap: "View on Map",
+    message: "Message on WhatsApp",
+    noData: "No data found.",
+  },
+  te: {
+    farmer: "రైతు",
+    customer: "కస్టమర్",
+    name: "పేరు",
+    productNeed: "కావలసిన ఉత్పత్తి",
+    cropAmount: "పంట పరిమాణం",
+    email: "ఈమెయిల్",
+    phone: "ఫోన్",
+    alternatePhone: "ప్రత్యామ్నాయ ఫోన్",
+    address: "చిరునామా",
+    location: "స్థానం",
+    viewOnMap: "మ్యాప్‌లో వీక్షించండి",
+    message: "WhatsApp‌లో సందేశం పంపండి",
+    noData: "డేటా కనబడలేదు.",
+  },
+  ta: {
+    farmer: "விவசாயி",
+    customer: "வாடிக்கையாளர்",
+    name: "பெயர்",
+    productNeed: "தேவையான பொருள்",
+    cropAmount: "பயிர் அளவு",
+    email: "மின்னஞ்சல்",
+    phone: "தொலைபேசி",
+    alternatePhone: "மாற்று தொலைபேசி",
+    address: "முகவரி",
+    location: "இருப்பிடம்",
+    viewOnMap: "வரைபடத்தில் பார்க்க",
+    message: "WhatsApp-ல் செய்தி அனுப்பு",
+    noData: "தரவு இல்லை.",
+  },
+  kn: {
+    farmer: "ಕೃಷಿಕ",
+    customer: "ಗ್ರಾಹಕ",
+    name: "ಹೆಸರು",
+    productNeed: "ಅಗತ್ಯವಿರುವ ಉತ್ಪನ್ನ",
+    cropAmount: "ಬೆಳೆ ಪ್ರಮಾಣ",
+    email: "ಇಮೇಲ್",
+    phone: "ಫೋನ್",
+    alternatePhone: "ಬದಲಿ ಫೋನ್",
+    address: "ವಿಳಾಸ",
+    location: "ಸ್ಥಳ",
+    viewOnMap: "ನಕ್ಷೆಯಲ್ಲಿ ವೀಕ್ಷಿಸಿ",
+    message: "WhatsApp ನಲ್ಲಿ ಸಂದೇಶ ಕಳುಹಿಸಿ",
+    noData: "ಮಾಹಿತಿ ಲಭ್ಯವಿಲ್ಲ.",
+  },
+};
 
 const Order = () => {
   const [data, setData] = useState([]);
-  const [selectedTab, setSelectedTab] = useState('Farmer'); // Default tab is Farmer
+  const [selectedTab, setSelectedTab] = useState("Farmer");
+  const [language, setLanguage] = useState("en"); // Default language: English
 
-  // Fetch data from API
   useEffect(() => {
     axios
-      .get(
-        'https://csppro-c0fd1-default-rtdb.firebaseio.com/order.json'
-      )
+      .get("https://csppro-c0fd1-default-rtdb.firebaseio.com/order.json")
       .then((response) => {
         const fetchedData = Object.keys(response.data).map((key) => ({
           id: key,
@@ -19,29 +80,40 @@ const Order = () => {
         }));
         setData(fetchedData);
       })
-      .catch((error) => console.error('Error fetching data:', error));
+      .catch((error) => console.error("Error fetching data:", error));
   }, []);
 
-  // Filter data based on selected tab
   const filteredData = data.filter((item) => item.typeOfUser === selectedTab);
 
   return (
     <div className="app-container3">
+      {/* Language Selector */}
+      <div className="language-dropdown">
+        <select onChange={(e) => setLanguage(e.target.value)} value={language}>
+          <option value="en">🇬🇧 English</option>
+          <option value="te">🇮🇳 తెలుగు</option>
+          <option value="ta">🇮🇳 தமிழ்</option>
+          <option value="kn">🇮🇳 ಕನ್ನಡ</option>
+        </select>
+      </div>
+
+      {/* Tabs */}
       <div className="tabs-container3">
         <button
-          className={`tab3 ${selectedTab === 'Farmer' ? 'active' : ''}`}
-          onClick={() => setSelectedTab('Farmer')}
+          className={`tab3 ${selectedTab === "Farmer" ? "active" : ""}`}
+          onClick={() => setSelectedTab("Farmer")}
         >
-          Farmer
+          {translations[language].farmer}
         </button>
         <button
-          className={`tab3 ${selectedTab === 'Customer' ? 'active' : ''}`}
-          onClick={() => setSelectedTab('Customer')}
+          className={`tab3 ${selectedTab === "Customer" ? "active" : ""}`}
+          onClick={() => setSelectedTab("Customer")}
         >
-          Customer
+          {translations[language].customer}
         </button>
       </div>
 
+      {/* Profile Cards */}
       {filteredData.length > 0 ? (
         <div className="profile-grid3">
           {filteredData.map((item) => (
@@ -53,16 +125,15 @@ const Order = () => {
                 />
               </div>
               <div className="profile-details3">
-                <p>Name: {item.username}</p>
-                <p>Product Need: {item.productNeed}</p>
-                <p>Crop Amount: {item.cropAmount} kgs</p>
-                <p>Email: {item.email}</p>
-                <p>Phone: {item.phoneNumber}</p>
-                <p>Alternate Phone: {item.alternateNumber}</p>
-               
-                <p>Address: {item.address}</p>
+                <p>{translations[language].name}: {item.username}</p>
+                <p>{translations[language].productNeed}: {item.productNeed}</p>
+                <p>{translations[language].cropAmount}: {item.cropAmount} kgs</p>
+                <p>{translations[language].email}: {item.email}</p>
+                <p>{translations[language].phone}: {item.phoneNumber}</p>
+                <p>{translations[language].alternatePhone}: {item.alternateNumber}</p>
+                <p>{translations[language].address}: {item.address}</p>
                 <p>
-                  Location:{' '}
+                  {translations[language].location}:{" "}
                   <a
                     href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
                       item.address
@@ -70,10 +141,9 @@ const Order = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    View on Map
+                    {translations[language].viewOnMap}
                   </a>
                 </p>
-                {/* WhatsApp Button */}
                 <p>
                   <button
                     className="whatsapp-button3"
@@ -82,10 +152,10 @@ const Order = () => {
                       const whatsappUrl = `https://wa.me/${item.phoneNumber}?text=${encodeURIComponent(
                         message
                       )}`;
-                      window.open(whatsappUrl, '_blank');
+                      window.open(whatsappUrl, "_blank");
                     }}
                   >
-                    Message on WhatsApp
+                    {translations[language].message}
                   </button>
                 </p>
               </div>
@@ -93,7 +163,7 @@ const Order = () => {
           ))}
         </div>
       ) : (
-        <p>No {selectedTab.toLowerCase()}s found.</p>
+        <p>{translations[language].noData}</p>
       )}
     </div>
   );

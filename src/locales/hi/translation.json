@@ -69,6 +69,20 @@
   "enter_alternate_number": "वैकल्पिक नंबर दर्ज करें",
   "enter_address": "पता दर्ज करें",
   "enter_product_need": "उत्पाद/फसल की आवश्यकता दर्ज करें",
-  "enter_crop_amount": "फसल की आवश्यक मात्रा दर्ज करें"
+  "enter_crop_amount": "फसल की आवश्यक मात्रा दर्ज करें",
+
+  
+  "name": "नाम",
+  "productNeed": "उत्पाद की आवश्यकता",
+  "cropAmount": "फसल की मात्रा",
+  
+  "phone": "फोन",
+  "alternatePhone": "वैकल्पिक फोन",
+  
+  "location": "स्थान",
+  "viewOnMap": "मानचित्र पर देखें",
+  "messageOnWhatsApp": "WhatsApp पर संदेश भेजें",
+  "noFarmersFound": "कोई किसान नहीं मिला।",
+  "noCustomersFound": "कोई ग्राहक नहीं मिला।"
   
 }

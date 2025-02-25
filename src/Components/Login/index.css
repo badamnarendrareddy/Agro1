@@ -12,7 +12,8 @@ body {
     align-items: center;
     min-height: 100vh;
     padding: 20px;
-    background: linear-gradient(135deg, #e0f7fa, #fff);
+    background-image: url('https://wallpapercave.com/wp/wp5627847.jpg');
+    background-size: cover;
   }
   
   .form-container1 {
