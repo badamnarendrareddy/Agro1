@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import {  Route, Switch } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next'; // Import I18nextProvider
 import i18n from './i18n'; // Import your i18n configuration
 
