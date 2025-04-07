@@ -68,26 +68,44 @@ const translations = {
 const Order = () => {
   const [data, setData] = useState([]);
   const [selectedTab, setSelectedTab] = useState("Farmer");
-  const [language, setLanguage] = useState("en"); // Default language: English
+  const [language, setLanguage] = useState("en");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios
-      .get("https://csppro-c0fd1-default-rtdb.firebaseio.com/order.json")
-      .then((response) => {
-        const fetchedData = Object.keys(response.data).map((key) => ({
-          id: key,
-          ...response.data[key],
-        }));
-        setData(fetchedData);
-      })
-      .catch((error) => console.error("Error fetching data:", error));
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          'https://cspproject-a2a49-default-rtdb.asia-southeast1.firebasedatabase.app/orders.json'
+        );
+        
+        if (response.data) {
+          const fetchedData = Object.keys(response.data).map((key) => ({
+            id: key,
+            ...response.data[key],
+          }));
+          setData(fetchedData);
+        } else {
+          setData([]);
+        }
+      } catch (err) {
+        console.error("Error fetching data:", err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const filteredData = data.filter((item) => item.typeOfUser === selectedTab);
 
+  if (loading) return <div className="app-container3">Loading...</div>;
+  if (error) return <div className="app-container3">Error: {error}</div>;
+
   return (
     <div className="app-container3">
-      {/* Language Selector */}
       <div className="language-dropdown">
         <select onChange={(e) => setLanguage(e.target.value)} value={language}>
           <option value="en">🇬🇧 English</option>
@@ -97,7 +115,6 @@ const Order = () => {
         </select>
       </div>
 
-      {/* Tabs */}
       <div className="tabs-container3">
         <button
           className={`tab3 ${selectedTab === "Farmer" ? "active" : ""}`}
@@ -113,7 +130,6 @@ const Order = () => {
         </button>
       </div>
 
-      {/* Profile Cards */}
       {filteredData.length > 0 ? (
         <div className="profile-grid3">
           {filteredData.map((item) => (
@@ -125,25 +141,27 @@ const Order = () => {
                 />
               </div>
               <div className="profile-details3">
-                <p>{translations[language].name}: {item.username}</p>
-                <p>{translations[language].productNeed}: {item.productNeed}</p>
-                <p>{translations[language].cropAmount}: {item.cropAmount} kgs</p>
-                <p>{translations[language].email}: {item.email}</p>
-                <p>{translations[language].phone}: {item.phoneNumber}</p>
-                <p>{translations[language].alternatePhone}: {item.alternateNumber}</p>
-                <p>{translations[language].address}: {item.address}</p>
-                <p>
-                  {translations[language].location}:{" "}
-                  <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                      item.address
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {translations[language].viewOnMap}
-                  </a>
-                </p>
+                <p>{translations[language].name}: {item.username || 'N/A'}</p>
+                <p>{translations[language].productNeed}: {item.productNeed || 'N/A'}</p>
+                <p>{translations[language].cropAmount}: {item.cropAmount || '0'} kgs</p>
+                <p>{translations[language].email}: {item.email || 'N/A'}</p>
+                <p>{translations[language].phone}: {item.phoneNumber || 'N/A'}</p>
+                <p>{translations[language].alternatePhone}: {item.alternateNumber || 'N/A'}</p>
+                <p>{translations[language].address}: {item.address || 'N/A'}</p>
+                {item.address && (
+                  <p>
+                    {translations[language].location}:{" "}
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                        item.address
+                      )}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {translations[language].viewOnMap}
+                    </a>
+                  </p>
+                )}
                 <p>
                   <button
                     className="whatsapp-button3"
@@ -154,6 +172,7 @@ const Order = () => {
                       )}`;
                       window.open(whatsappUrl, "_blank");
                     }}
+                    disabled={!item.phoneNumber}
                   >
                     {translations[language].message}
                   </button>
